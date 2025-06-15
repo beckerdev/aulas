@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="stylesheet" href="estilos5chat.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Público</title>
+  <link rel="icon" href="imagens/perfil.png" type="image/png">
+</head>
+<body>
+  <h1>Chat Público</h1>
+  <div class="chat-container">
+    <form class="name-form" id="nameForm">
+      <input type="text" id="nomeUsuarioInput" placeholder="Digite seu nome..." required maxlength="30">
+      <button type="submit">Definir Nome</button>
+    </form>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <form class="chat-form" id="chatForm">
+      <input type="text" id="mensagemInput" placeholder="Digite sua mensagem..." required maxlength="280">
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+  <script>
+const firebaseConfig = {
+  apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",
+  authDomain: "devnotes-b2b9a.firebaseapp.com",
+  projectId: "devnotes-b2b9a",
+  storageBucket: "devnotes-b2b9a.firebasestorage.app",
+  messagingSenderId: "614723058656",
+  appId: "1:614723058656:web:19ad93a19adbd91f628985",
+  measurementId: "G-CRX44JCWMR"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+    const chatForm = document.getElementById('chatForm');
+    const nameForm = document.getElementById('nameForm');
+    const nomeUsuarioInput = document.getElementById('nomeUsuarioInput');
+    const mensagemInput = document.getElementById('mensagemInput');
+    const chatBox = document.getElementById('chatBox');
+
+    let nomeUsuario = "Usuário";
+    const avatarUrl = "https://i.pravatar.cc/40?u=anon";
+
+    nameForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = nomeUsuarioInput.value.trim();
+      if (nome) {
+        nomeUsuario = nome;
+        nomeUsuarioInput.value = '';
+        alert("Nome definido como: " + nomeUsuario);
+      }
+    });
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const texto = mensagemInput.value.trim();
+      if (texto) {
+        db.collection("chat").add({
+          texto,
+          nome: nomeUsuario,
+          avatar: avatarUrl,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        mensagemInput.value = '';
+      }
+    });
+
+    db.collection("chat")
+      .orderBy("timestamp")
+      .onSnapshot(snapshot => {
+        chatBox.innerHTML = '';
+        snapshot.forEach(doc => {
+          const msg = doc.data();
+          const div = document.createElement('div');
+          div.className = 'mensagem';
+
+          const img = document.createElement('img');
+          img.src = msg.avatar || avatarUrl;
+          img.className = 'avatar';
+
+          const nome = document.createElement('span');
+          nome.className = 'username';
+          nome.textContent = msg.nome || "Anônimo";
+
+          const texto = document.createElement('span');
+          texto.textContent = msg.texto;
+
+          div.appendChild(img);
+          div.appendChild(nome);
+          div.appendChild(texto);
+
+          chatBox.appendChild(div);
+        });
+        chatBox.scrollTop = chatBox.scrollHeight;
+      });
+  </script>
+</body>
+</html>
