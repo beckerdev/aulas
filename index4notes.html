@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mural Público</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      resize: none;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #e6b800;
+    }
+
+    .mensagens {
+      margin-top: 40px;
+    }
+
+    .mensagem {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mural Público</h1>
+  <div class="content">
+    <form id="formulario">
+      <textarea id="mensagem" placeholder="Escreva sua mensagem pública aqui..." required></textarea>
+      <button type="submit">Publicar</button>
+    </form>
+
+    <div class="mensagens" id="mensagens">
+      <!-- Mensagens aparecerão aqui -->
+    </div>
+  </div>
+
+  <script>
+    const formulario = document.getElementById('formulario');
+    const mensagemInput = document.getElementById('mensagem');
+    const mensagensDiv = document.getElementById('mensagens');
+
+    formulario.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const texto = mensagemInput.value.trim();
+      if (texto !== '') {
+        const novaMensagem = document.createElement('div');
+        novaMensagem.className = 'mensagem';
+        novaMensagem.innerText = texto;
+        mensagensDiv.prepend(novaMensagem);
+        mensagemInput.value = '';
+        // Aqui você pode chamar uma API para salvar no servidor
+      }
+    });
+  </script>
+</body>
+</html>
