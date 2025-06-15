@@ -115,7 +115,6 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
   <script>
-    // Configuração Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyDxs504_Qgymofz9mAk7ufdPLowX-mI0Io",
       authDomain: "devchats-7f93b.firebaseapp.com",
@@ -136,13 +135,14 @@
     const chatBox = document.getElementById('chatBox');
 
     let nomeUsuario = "Usuário";
-    const avatarUrl = "https://i.pravatar.cc/40?u=anon";
+    let avatarUrl = "https://i.pravatar.cc/40?u=" + Math.floor(Math.random() * 1000000);
 
     nameForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const nome = nomeUsuarioInput.value.trim();
       if (nome) {
         nomeUsuario = nome;
+        avatarUrl = "https://i.pravatar.cc/40?u=" + encodeURIComponent(nome);
         nomeUsuarioInput.value = '';
         alert("Nome definido como: " + nomeUsuario);
       }
