@@ -36,7 +36,33 @@
       <img src="https://cdn.pixabay.com/photo/2020/04/29/21/19/web-5117714_960_720.jpg" alt="Projeto 4">
       <h2>Projeto Futuro</h2>
       <a href="#">Em breve</a>
-    </div>
-  </div>
-</body>
+     </div>
+   </div>
+    <script>
+    <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
+    // Cole aqui suas credenciais do Firebase:
+   const firebaseConfig = {
+  apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",
+  authDomain: "devnotes-b2b9a.firebaseapp.com",
+  projectId: "devnotes-b2b9a",
+  storageBucket: "devnotes-b2b9a.firebasestorage.app",
+  messagingSenderId: "614723058656",
+  appId: "1:614723058656:web:19ad93a19adbd91f628985",
+  measurementId: "G-CRX44JCWMR"
+};
+
+
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const formulario = document.getElementById('formulario');
+    const mensagemInput = document.getElementById('mensagem');
+    const mensagensDiv = document.getElementById('mensagens');
+
+    </script>
+  </body>
 </html>
