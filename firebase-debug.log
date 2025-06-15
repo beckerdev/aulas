@@ -1,47 +1,56 @@
-[debug] [2025-06-15T18:36:55.746Z] ----------------------------------------------------------------------
-[debug] [2025-06-15T18:36:55.747Z] Command:       /usr/local/share/nvm/versions/node/v20.19.0/bin/node /home/codespace/nvm/current/bin/firebase login
-[debug] [2025-06-15T18:36:55.748Z] CLI Version:   14.7.0
-[debug] [2025-06-15T18:36:55.748Z] Platform:      linux
-[debug] [2025-06-15T18:36:55.748Z] Node Version:  v20.19.0
-[debug] [2025-06-15T18:36:55.748Z] Time:          Sun Jun 15 2025 18:36:55 GMT+0000 (Coordinated Universal Time)
-[debug] [2025-06-15T18:36:55.748Z] Env Overrides: GITHUB_API_URL, GITHUB_API_URL
-[debug] [2025-06-15T18:36:55.748Z] ----------------------------------------------------------------------
+[debug] [2025-06-15T18:51:04.805Z] ----------------------------------------------------------------------
+[debug] [2025-06-15T18:51:04.806Z] Command:       /usr/local/share/nvm/versions/node/v20.19.0/bin/node /home/codespace/nvm/current/bin/firebase login
+[debug] [2025-06-15T18:51:04.807Z] CLI Version:   14.7.0
+[debug] [2025-06-15T18:51:04.807Z] Platform:      linux
+[debug] [2025-06-15T18:51:04.807Z] Node Version:  v20.19.0
+[debug] [2025-06-15T18:51:04.807Z] Time:          Sun Jun 15 2025 18:51:04 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-06-15T18:51:04.807Z] Env Overrides: GITHUB_API_URL, GITHUB_API_URL
+[debug] [2025-06-15T18:51:04.807Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-06-15T18:36:55.750Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
 [info] i  Firebase CLI integrates with Gemini in Firebase API to provide assistant features. Learn more about using Gemini in Firebase and how we train our models: https://firebase.google.com/docs/gemini-in-firebase/set-up-gemini#required-permissions 
-[debug] [2025-06-15T18:36:55.932Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
-[debug] [2025-06-15T18:36:55.932Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
 [info] 
 [info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you. 
 [info] 
 [info] i  To change your the preference at any time, run `firebase logout` and `firebase login` again. 
-[debug] [2025-06-15T18:37:34.421Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
-[debug] [2025-06-15T18:37:34.421Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"cdc561ad-2d93-4d0f-bc3a-98a35e313753"}
-[debug] [2025-06-15T18:37:34.658Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
-[debug] [2025-06-15T18:37:34.658Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"VR6EIzDPgVzOe0q54GwbrQ86gKFTVxA1z70nQ60ZSu0"}
+[debug] [2025-06-15T18:51:15.525Z] >>> [apiv2][query] POST https://auth.firebase.tools/attest [none]
+[debug] [2025-06-15T18:51:15.526Z] >>> [apiv2][body] POST https://auth.firebase.tools/attest {"session_id":"a9acc1bb-d54d-430d-b5fa-95dddf633605"}
+[debug] [2025-06-15T18:51:15.772Z] <<< [apiv2][status] POST https://auth.firebase.tools/attest 200
+[debug] [2025-06-15T18:51:15.773Z] <<< [apiv2][body] POST https://auth.firebase.tools/attest {"token":"Tn23yVkE46MRuLgLxvD3GMezDQdFn4SVnDmKuwf6qmo"}
 [info] 
 [info] To sign in to the Firebase CLI:
 [info] 
 [info] 1. Take note of your session ID:
 [info] 
-[info]    CDC56
+[info]    A9ACC
 [info] 
 [info] 2. Visit the URL below on any device and follow the instructions to get your code:
 [info] 
-[info]    https://auth.firebase.tools/login?code_challenge=VvVs-l8uDAhoGlepn1Vkl5OiG9Is4-Uv8lRnGINZrpk&session=cdc561ad-2d93-4d0f-bc3a-98a35e313753&attest=VR6EIzDPgVzOe0q54GwbrQ86gKFTVxA1z70nQ60ZSu0
+[info]    https://auth.firebase.tools/login?code_challenge=1S3rJgpr5B0nRJim9s82i_al3Zm6-5syW1I1TJKIo5Q&session=a9acc1bb-d54d-430d-b5fa-95dddf633605&attest=Tn23yVkE46MRuLgLxvD3GMezDQdFn4SVnDmKuwf6qmo
 [info] 
 [info] 3. Paste or enter the authorization code below once you have it:
+[info] [debug] [2025-06-15T19:02:45.165Z] ----------------------------------------------------------------------
+[debug] [2025-06-15T19:02:45.167Z] Command:       /usr/local/share/nvm/versions/node/v20.19.0/bin/node /home/codespace/nvm/current/bin/firebase init
+[debug] [2025-06-15T19:02:45.167Z] CLI Version:   14.7.0
+[debug] [2025-06-15T19:02:45.167Z] Platform:      linux
+[debug] [2025-06-15T19:02:45.167Z] Node Version:  v20.19.0
+[debug] [2025-06-15T19:02:45.168Z] Time:          Sun Jun 15 2025 19:02:45 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-06-15T19:02:45.168Z] Env Overrides: GITHUB_API_URL, GITHUB_API_URL
+[debug] [2025-06-15T19:02:45.168Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-15T19:02:45.171Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-15T19:02:45.172Z] > authorizing via signed-in user (cassiano.becker@institutoivoti.com.br)
 [info] 
-[debug] [2025-06-15T18:38:27.588Z] ExitPromptError: User force closed the prompt with SIGINT
-    at Interface.sigint (/usr/local/share/nvm/versions/node/v20.19.0/lib/node_modules/firebase-tools/node_modules/@inquirer/core/dist/commonjs/lib/create-prompt.js:101:37)
-    at Interface.emit (node:events:524:28)
-    at Interface.emit (node:domain:489:12)
-    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1125:18)
-    at ReadStream.onkeypress (node:internal/readline/interface:264:20)
-    at ReadStream.emit (node:events:536:35)
-    at ReadStream.emit (node:domain:489:12)
-    at emitKeys (node:internal/readline/utils:371:14)
-    at emitKeys.next (<anonymous>)
-    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
-[error] 
-[error] Error: An unexpected error has occurred.
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /workspaces/aulas
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
