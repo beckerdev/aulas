@@ -1,12 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-     <link rel="icon" href="DevNotes.png" type="image/png">
-    <link rel="stylesheet" href="estilos5chat.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chat Público</title>
   <link rel="icon" href="imagens/perfil.png" type="image/png">
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 40px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      margin-bottom: 30px;
+    }
+
+    .chat-container {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 30px;
+      max-width: 900px;
+      margin: 0 auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .chat-box {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+    }
+
+    .mensagem {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ffcc00;
+    }
+
+    .username {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .chat-form, .name-form {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .chat-form input, .name-form input {
+      flex: 1;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .chat-form button, .name-form button {
+      padding: 10px 20px;
+      background-color: #ffcc00;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .chat-form button:hover, .name-form button:hover {
+      background-color: #e6b800;
+    }
+  </style>
 </head>
 <body>
   <h1>Chat Público</h1>
@@ -25,30 +111,24 @@
   </div>
 
   <!-- Firebase SDK -->
- <script type="module">
- // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDxs504_Qgymofz9mAk7ufdPLowX-mI0Io",
-  authDomain: "devchats-7f93b.firebaseapp.com",
-  projectId: "devchats-7f93b",
-  storageBucket: "devchats-7f93b.firebasestorage.app",
-  messagingSenderId: "325654580281",
-  appId: "1:325654580281:web:60fa4c327d9941984951e8",
-  measurementId: "G-155MSC7LNF"
-};
+  <script>
+    // Configuração Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyDxs504_Qgymofz9mAk7ufdPLowX-mI0Io",
+      authDomain: "devchats-7f93b.firebaseapp.com",
+      projectId: "devchats-7f93b",
+      storageBucket: "devchats-7f93b.firebasestorage.app",
+      messagingSenderId: "325654580281",
+      appId: "1:325654580281:web:60fa4c327d9941984951e8",
+      measurementId: "G-155MSC7LNF"
+    };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-</script>
-<script>
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
     const chatForm = document.getElementById('chatForm');
     const nameForm = document.getElementById('nameForm');
     const nomeUsuarioInput = document.getElementById('nomeUsuarioInput');
