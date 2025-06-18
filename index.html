@@ -64,47 +64,5 @@
     >
       About us
     </button>
-
-    <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-    <script>
-     // Cole aqui suas credenciais do Firebase:
-     const firebaseConfig = {
-     apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",
-     authDomain: "devnotes-b2b9a.firebaseapp.com",
-     projectId: "devnotes-b2b9a",
-     storageBucket: "devnotes-b2b9a.firebasestorage.app",
-     messagingSenderId: "614723058656",
-     appId: "1:614723058656:web:19ad93a19adbd91f628985",
-     measurementId: "G-CRX44JCWMR"
-     };
-
-
-     // Inicializar Firebase
-     firebase.initializeApp(firebaseConfig);
-     const db = firebase.firestore();
-
-     const formulario = document.getElementById('formulario');
-     const mensagemInput = document.getElementById('mensagem');
-     const mensagensDiv = document.getElementById('mensagens');
-
-     import { initializeApp } from "firebase/app";
-import { getPerformance } from "firebase/performance";
-
-// TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
-const firebaseConfig = {
-  // ...
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
-
-// Initialize Performance Monitoring and get a reference to the service
-const perf = getPerformance(app);
-
-    </script>
   </body>
 </html>

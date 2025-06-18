@@ -50,7 +50,6 @@
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-performance-compat.js"></script>
 
   <script>
     // Configuração do Firebase
@@ -67,7 +66,6 @@
     // Inicializar Firebase e serviços
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-    const perf = firebase.performance();
 
     const chatForm = document.getElementById('chatForm');
     const nameForm = document.getElementById('nameForm');
