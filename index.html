@@ -40,6 +40,31 @@
      </div>
    </div>
     
+    <!-- Botão About us -->
+    <button
+      onclick="window.location.href='pages/about.html';"
+      style="
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        background: #fff;
+        color: #333;
+        border: none;
+        border-radius: 24px;
+        padding: 12px 24px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        font-size: 1rem;
+        cursor: pointer;
+        z-index: 1000;
+        transition: background 0.2s;
+      "
+      onmouseover="this.style.background='#f0f0f0';"
+      onmouseout="this.style.background='#fff';"
+      aria-label="Sobre nós"
+    >
+      About us
+    </button>
+
     <!-- Firebase SDKs -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
