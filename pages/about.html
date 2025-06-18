@@ -8,6 +8,28 @@
   <link rel="stylesheet" href="../styles/estilos5chat.css">
 </head>
 <body>
+    <!-- Botão de voltar para a página inicial -->
+  <button
+    onclick="window.location.href='../index.html';"
+    style="
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    "
+    aria-label="Voltar para a página inicial"
+  >
+    <!-- Seta para a direita -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M8 5l8 7-8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <h1>Sobre o Projeto DevNotes</h1>
   <div class="chat-container">
     <div class="chat-box" style="padding: 20px; line-height: 1.6;">
