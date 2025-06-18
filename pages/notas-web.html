@@ -8,6 +8,28 @@
   <title>Notas HTML - IFTI - TI1</title>
 </head>
 <body>
+  <!-- Botão de voltar para a página inicial -->
+  <button
+    onclick="window.location.href='/'"
+    style="
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    "
+    aria-label="Voltar para a página inicial"
+  >
+    <!-- Seta para a direita -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M8 5l8 7-8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <h1>NOTAS HTML</h1>
   <div class="content">
     <p class="principal">Por que testar em diferentes navegadores?</p>
@@ -54,43 +76,5 @@
     * Em programação, chaves ({ e }) são usadas para delimitar blocos de código. Esses blocos são conjuntos de instruções que são executadas como uma unidade, frequentemente dentro de estruturas de controle como funções, loops e condicionais.
     </p>
   </div>
-  <script>
-    import React from "react";
-    import { useNavigate } from "react-router-dom";
-
-    const BackButton = () => {
-      const navigate = useNavigate();
-
-      const handleClick = () => {
-        navigate("/");
-      };
-
-      return (
-        <button
-          onClick={handleClick}
-          style={{
-            position: "fixed",
-            top: "16px",
-            left: "16px",
-            background: "white",
-            border: "none",
-            cursor: "pointer",
-            padding: "8px",
-            borderRadius: "50%",
-            boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-            zIndex: 1000,
-          }}
-          aria-label="Voltar para a página inicial"
-        >
-          {/* Seta para a direita */}
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M8 5l8 7-8 7" stroke="#333" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-      );
-    };
-
-    export default BackButton;
-  </script>
 </body>
 </html>
