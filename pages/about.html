@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="../styles/estilos5chat.css">
 </head>
 <body>
+
+
     <!-- Botão de voltar para a página inicial -->
   <button
     onclick="window.location.href='../index.html';"
@@ -60,5 +62,24 @@
       </ul>
     </div>
   </div>
-</body>
+<script>
+  import { initializeApp } from "firebase/app";
+import { getPerformance } from "firebase/performance";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Performance Monitoring and get a reference to the service
+const perf = getPerformance(app);
+</script>
+
+
+   </body>
 </html>

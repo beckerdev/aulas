@@ -116,5 +116,24 @@ for (int i = 1; i <= 5; i++) { <br>
         <path d="M8 5l8 7-8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
+    
+<script>
+    import { initializeApp } from "firebase/app";
+import { getPerformance } from "firebase/performance";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Performance Monitoring and get a reference to the service
+const perf = getPerformance(app);
+</script>
+
 </body>
 </html>
