@@ -50,6 +50,7 @@
   <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-performance-compat.js"></script>
 
   <script>
     // Your web app's Firebase configuration
@@ -67,6 +68,9 @@
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
+    // Inicializar Performance Monitoring
+    const perf = firebase.performance();
+
     const chatForm = document.getElementById('chatForm');
     const nameForm = document.getElementById('nameForm');
     const nomeUsuarioInput = document.getElementById('nomeUsuarioInput');
@@ -83,36 +87,32 @@
     });
 
     // Solicita permissão de notificação
-    if ("Notification" in window && Notification.permission !== "granted") {
-      Notification.requestPermission();
-    }
-
-    nameForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+    nameForm.addEventListener('submit', (e) => {.permission !== "granted") {
+      e.preventDefault();tPermission();
       const nome = nomeUsuarioInput.value.trim();
       if (nome) {
-        nomeUsuario = nome;
+        nomeUsuario = nome;er('submit', (e) => {
         avatarUrl = "https://i.pravatar.cc/40?u=" + encodeURIComponent(nome);
-        nomeUsuarioInput.value = '';
+        nomeUsuarioInput.value = '';value.trim();
         alert("Nome definido como: " + nomeUsuario);
-      }
-    });
-
-    chatForm.addEventListener('submit', (e) => {
+      } nomeUsuario = nome;
+    }); avatarUrl = "https://i.pravatar.cc/40?u=" + encodeURIComponent(nome);
+        nomeUsuarioInput.value = '';
+    chatForm.addEventListener('submit', (e) => {io);
       e.preventDefault();
       const texto = mensagemInput.value.trim();
       if (texto) {
-        db.collection("chat").add({
-          texto,
-          nome: nomeUsuario,
+        db.collection("chat").add({it', (e) => {
+          texto,efault();
+          nome: nomeUsuario,Input.value.trim();
           avatar: avatarUrl,
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
+        });exto,
         mensagemInput.value = '';
-      }
-    });
-
-    db.collection("chat")
+      }   avatar: avatarUrl,
+    });   timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+    db.collection("chat")ue = '';
       .orderBy("timestamp")
       .onSnapshot(snapshot => {
         chatBox.innerHTML = '';
@@ -120,53 +120,33 @@
           const msg = doc.data();
           const div = document.createElement('div');
           div.className = 'mensagem';
-
+        snapshot.forEach(doc => {
           const img = document.createElement('img');
-          img.src = msg.avatar || avatarUrl;
-          img.className = 'avatar';
+          img.src = msg.avatar || avatarUrl;('div');
+          img.className = 'avatar';';
 
           const nome = document.createElement('span');
-          nome.className = 'username';
+          nome.className = 'username';arUrl;
           nome.textContent = msg.nome || "Anônimo";
 
           const texto = document.createElement('span');
           texto.textContent = msg.texto;
-
+          nome.textContent = msg.nome || "Anônimo";
           div.appendChild(img);
-          div.appendChild(nome);
-          div.appendChild(texto);
+          div.appendChild(nome);.createElement('span');
+          div.appendChild(texto);.texto;
 
           chatBox.appendChild(div);
-
+          div.appendChild(nome);
           // Envia notificação se a aba estiver inativa e a mensagem não for do próprio usuário
           if (!janelaAtiva && msg.nome !== nomeUsuario && Notification.permission === "granted") {
             new Notification(`Nova mensagem de ${msg.nome}`, {
               body: msg.texto,
-              icon: msg.avatar || "imagens/perfil.png"
-            });
+              icon: msg.avatar || "imagens/perfil.png"a e a mensagem não for do próprio usuário
+            });janelaAtiva && msg.nome !== nomeUsuario && Notification.permission === "granted") {
+          } new Notification(`Nova mensagem de ${msg.nome}`, {
+        });   body: msg.texto,
+        chatBox.scrollTop = chatBox.scrollHeight;.png"
+      });   });
           }
-        });
-        chatBox.scrollTop = chatBox.scrollHeight;
-      });
-
-import { initializeApp } from "firebase/app";
-import { getPerformance } from "firebase/performance";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",
-  authDomain: "devnotes-b2b9a.firebaseapp.com",
-  projectId: "devnotes-b2b9a",
-  storageBucket: "devnotes-b2b9a.firebasestorage.app",
-  messagingSenderId: "614723058656",
-  appId: "1:614723058656:web:19ad93a19adbd91f628985",
-  measurementId: "G-CRX44JCWMR"
-};
-
-const app = initializeApp(firebaseConfig);
-const perf = getPerformance(app);
-
-
-
-  </script>
-</body>
-</html>
+import { initializeApp } from "firebase/app";import { getPerformance } from "firebase/performance";      });const firebaseConfig = {  apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",  authDomain: "devnotes-b2b9a.firebaseapp.com",  projectId: "devnotes-b2b9a",  storageBucket: "devnotes-b2b9a.firebasestorage.app",  messagingSenderId: "614723058656",  appId: "1:614723058656:web:19ad93a19adbd91f628985",  measurementId: "G-CRX44JCWMR"};const app = initializeApp(firebaseConfig);const perf = getPerformance(app);  </script></body></html>

@@ -67,54 +67,60 @@ const firebaseConfig = {
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
 
-    const formulario = document.getElementById('formulario');
-    const mensagemInput = document.getElementById('mensagem');
-    const mensagensDiv = document.getElementById('mensagens');
+    // Inicializar Performance Monitoring
+    const perf = firebase.performance();
+
+    const formulario = document.getElementById('formulario');    const formulario = document.getElementById('formulario');
+    const mensagemInput = document.getElementById('mensagem');t = document.getElementById('mensagem');
+    const mensagensDiv = document.getElementById('mensagens');mensagens');
 
     // Enviar mensagem
-    formulario.addEventListener('submit', (e) => {
+    formulario.addEventListener('submit', (e) => {EventListener('submit', (e) => {
       e.preventDefault();
-      const texto = mensagemInput.value.trim();
+      const texto = mensagemInput.value.trim();o = mensagemInput.value.trim();
       if (texto) {
-        db.collection("mensagens").add({
+        db.collection("mensagens").add({collection("mensagens").add({
           texto,
-          timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });
-        mensagemInput.value = '';
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()   timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }); });
+        mensagemInput.value = '';        mensagemInput.value = '';
       }
     });
 
-    // Carregar mensagens em tempo real
+    // Carregar mensagens em tempo realo real
     db.collection("mensagens")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
         mensagensDiv.innerHTML = '';
         snapshot.forEach((doc) => {
           const msg = doc.data();
-          const div = document.createElement('div');
-          div.className = 'mensagem';
-          div.textContent = msg.texto;
-          mensagensDiv.appendChild(div);
+          const div = document.createElement('div');ment('div');
+          div.className = 'mensagem';iv.className = 'mensagem';
+          div.textContent = msg.texto; div.textContent = msg.texto;
+          mensagensDiv.appendChild(div);          mensagensDiv.appendChild(div);
         });
       });
 
-import { initializeApp } from "firebase/app";
-import { getPerformance } from "firebase/performance";
+import { initializeApp } from "firebase/app"; from "firebase/app";
+import { getPerformance } from "firebase/performance";";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",
-  authDomain: "devnotes-b2b9a.firebaseapp.com",
+  authDomain: "devnotes-b2b9a.firebaseapp.com",seapp.com",
   projectId: "devnotes-b2b9a",
-  storageBucket: "devnotes-b2b9a.firebasestorage.app",
-  messagingSenderId: "614723058656",
-  appId: "1:614723058656:web:19ad93a19adbd91f628985",
+  storageBucket: "devnotes-b2b9a.firebasestorage.app",a.firebasestorage.app",
+  messagingSenderId: "614723058656",messagingSenderId: "614723058656",
+  appId: "1:614723058656:web:19ad93a19adbd91f628985",  appId: "1:614723058656:web:19ad93a19adbd91f628985",
   measurementId: "G-CRX44JCWMR"
 };
 
-const app = initializeApp(firebaseConfig);
-const perf = getPerformance(app);
+const app = initializeApp(firebaseConfig);const app = initializeApp(firebaseConfig);
+const perf = getPerformance(app);= getPerformance(app);
 
 
   </script>
+</body>
+</html>
+</html></body>  </script>  </script>
 </body>
 </html>
