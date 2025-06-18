@@ -53,8 +53,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-performance-compat.js"></script>
 
   <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    // Configuração do Firebase
     const firebaseConfig = {
       apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",
       authDomain: "devnotes-b2b9a.firebaseapp.com",
@@ -65,10 +64,9 @@
       measurementId: "G-EWT4LQZ459"
     };
 
+    // Inicializar Firebase e serviços
     firebase.initializeApp(firebaseConfig);
     const db = firebase.firestore();
-
-    // Inicializar Performance Monitoring
     const perf = firebase.performance();
 
     const chatForm = document.getElementById('chatForm');
@@ -86,33 +84,40 @@
       janelaAtiva = !document.hidden;
     });
 
-    // Solicita permissão de notificação
-    nameForm.addEventListener('submit', (e) => {.permission !== "granted") {
-      e.preventDefault();tPermission();
+    // Definir nome do usuário
+    nameForm.addEventListener('submit', (e) => {
+      e.preventDefault();
       const nome = nomeUsuarioInput.value.trim();
       if (nome) {
-        nomeUsuario = nome;er('submit', (e) => {
+        nomeUsuario = nome;
         avatarUrl = "https://i.pravatar.cc/40?u=" + encodeURIComponent(nome);
-        nomeUsuarioInput.value = '';value.trim();
-        alert("Nome definido como: " + nomeUsuario);
-      } nomeUsuario = nome;
-    }); avatarUrl = "https://i.pravatar.cc/40?u=" + encodeURIComponent(nome);
         nomeUsuarioInput.value = '';
-    chatForm.addEventListener('submit', (e) => {io);
+        alert("Nome definido como: " + nomeUsuario);
+
+        // Solicita permissão de notificação se ainda não foi concedida
+        if (Notification && Notification.permission !== "granted") {
+          Notification.requestPermission();
+        }
+      }
+    });
+
+    // Enviar mensagem
+    chatForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const texto = mensagemInput.value.trim();
       if (texto) {
-        db.collection("chat").add({it', (e) => {
-          texto,efault();
-          nome: nomeUsuario,Input.value.trim();
+        db.collection("chat").add({
+          texto,
+          nome: nomeUsuario,
           avatar: avatarUrl,
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        });exto,
-        mensagemInput.value = '';
-      }   avatar: avatarUrl,
-    });   timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
-    db.collection("chat")ue = '';
+        mensagemInput.value = '';
+      }
+    });
+
+    // Carregar mensagens em tempo real
+    db.collection("chat")
       .orderBy("timestamp")
       .onSnapshot(snapshot => {
         chatBox.innerHTML = '';
@@ -120,33 +125,34 @@
           const msg = doc.data();
           const div = document.createElement('div');
           div.className = 'mensagem';
-        snapshot.forEach(doc => {
+
           const img = document.createElement('img');
-          img.src = msg.avatar || avatarUrl;('div');
-          img.className = 'avatar';';
+          img.src = msg.avatar || avatarUrl;
+          img.className = 'avatar';
 
           const nome = document.createElement('span');
-          nome.className = 'username';arUrl;
+          nome.className = 'username';
           nome.textContent = msg.nome || "Anônimo";
 
           const texto = document.createElement('span');
           texto.textContent = msg.texto;
-          nome.textContent = msg.nome || "Anônimo";
+
           div.appendChild(img);
-          div.appendChild(nome);.createElement('span');
-          div.appendChild(texto);.texto;
+          div.appendChild(nome);
+          div.appendChild(texto);
 
           chatBox.appendChild(div);
-          div.appendChild(nome);
-          // Envia notificação se a aba estiver inativa e a mensagem não for do próprio usuário
+
+          // Notificação se a aba estiver inativa e a mensagem não for do próprio usuário
           if (!janelaAtiva && msg.nome !== nomeUsuario && Notification.permission === "granted") {
             new Notification(`Nova mensagem de ${msg.nome}`, {
               body: msg.texto,
-              icon: msg.avatar || "imagens/perfil.png"a e a mensagem não for do próprio usuário
-            });janelaAtiva && msg.nome !== nomeUsuario && Notification.permission === "granted") {
-          } new Notification(`Nova mensagem de ${msg.nome}`, {
-        });   body: msg.texto,
-        chatBox.scrollTop = chatBox.scrollHeight;.png"
-      });   });
+              icon: msg.avatar || "image/perfil.png"
+            });
           }
-import { initializeApp } from "firebase/app";import { getPerformance } from "firebase/performance";      });const firebaseConfig = {  apiKey: "AIzaSyD_ok8U3gEsUaD3XcM8jml4nhXKQmPAXu4",  authDomain: "devnotes-b2b9a.firebaseapp.com",  projectId: "devnotes-b2b9a",  storageBucket: "devnotes-b2b9a.firebasestorage.app",  messagingSenderId: "614723058656",  appId: "1:614723058656:web:19ad93a19adbd91f628985",  measurementId: "G-CRX44JCWMR"};const app = initializeApp(firebaseConfig);const perf = getPerformance(app);  </script></body></html>
+        });
+        chatBox.scrollTop = chatBox.scrollHeight;
+      });
+  </script>
+</body>
+</html>
