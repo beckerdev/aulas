@@ -48,6 +48,7 @@
   </button>
 
   <h1>Mural Público</h1>
+  <p class="subtitulo">Compartilhe suas notas e interaja com outros usuários</p>
   <div class="content">
     <form id="formulario">
       <textarea id="mensagem" placeholder="Escreva sua mensagem pública aqui..." required></textarea>
@@ -88,16 +89,20 @@
       e.preventDefault();
       const texto = mensagemInput.value.trim();
       if (texto) {
-        db.collection("mensagens").add({
+        db.collection("mural").add({
           texto,
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => {
+          console.log("Mensagem enviada com sucesso!");
+        }).catch((error) => {
+          console.error("Erro ao enviar mensagem: ", error);
         });
         mensagemInput.value = '';
       }
     });
 
     // Carregar mensagens em tempo real
-    db.collection("mensagens")
+    db.collection("mural")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) => {
         mensagensDiv.innerHTML = '';
