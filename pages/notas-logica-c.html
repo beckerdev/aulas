@@ -1,99 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="../styles/estilos3c.css">
-    <link rel="icon" href="../image/images-Photoroom.png" type="image/png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <title>Notas Lógica C - IFTI - TI1</title>
+  <meta name="description" content="Notas sobre Lógica de Programação em C para o curso de Desenvolvimento Web I do IFTI - TI1." />
+  <meta name="keywords" content="Lógica de Programação, C, Desenvolvimento Web, IFTI, TI1, Notas, Estruturas de Controle, Repetição" />
+  <meta name="author" content="IFTI - TI1" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="application-name" content="Notas Lógica C - IFTI - TI1" />
+  <meta name="apple-mobile-web-app-title" content="Notas Lógica C - IFTI - TI1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
+  <meta name="msapplication-TileImage" content="../image/images-Photoroom.png" />
+  <meta name="msapplication-navbutton-color" content="#ffffff" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="../image/images-Photoroom.png" type="image/png" />
+  <link rel="manifest" href="../scripts/manifest.json" />
+  <link rel="stylesheet" href="../styles/estilos3c.css" />
 </head>
 <body>
   <h1>NOTAS C</h1>
   <div class="content">
-
-   📌 1. Estrutura de Controle: if, else if, else <br>
-Usado para decisões condicionais. <br>
-<br>
-Executa blocos de código conforme a condição seja verdadeira (true) ou falsa (false). <br>
-<br>
-if (condição) { <br>
-    // Código se condição for verdadeira <br>
-} else if (outra_condição) { <br>
-    // Código se a outra condição for verdadeira <br>
-} else { <br>
-    // Código se nenhuma condição for verdadeira <br>
-} <br>
-<br>
-Exemplo: <br>
-<br>
-int x = 10; <br>
-<br>
-if (x > 0) { <br>
-    printf("Positivo"); <br>
-} else if (x == 0) { <br>
-    printf("Zero"); <br>
-} else { <br>
-    printf("Negativo"); <br>
-} <br>
-      <br>
-      <br>
-      📌 2. Estrutura switch/case <br>
-Usado para comparar uma variável com diferentes valores fixos. <br>
-<br>
-Mais legível que muitos if...else if... seguidos. <br>
-<br>
-Pode usar break para sair do caso atual (evita cair nos próximos). <br>
-<br>
-switch (variável) { <br>
-    case valor1: <br>
-        // Código para valor1 <br>
-        break; <br>
-    case valor2: <br>
-        // Código para valor2 <br>
-        break; <br>
-    default: <br>
-        // Código se nenhum valor for correspondente <br>
-} <br>
-      <br>
-Exemplo: <br>
-<br>
-int dia = 3; <br>
-<br>
-switch (dia) { <br>
-    case 1: <br>
-        printf("Domingo"); <br>
-        break; <br>
-    case 2: <br>
-        printf("Segunda"); <br>
-        break; <br>
-    case 3: <br>
-        printf("Terça"); <br>
-        break; <br>
-    default: <br>
-        printf("Dia inválido"); <br>
-} <br>
-      <br>
-      <br>
-      📌 3. Estrutura de Repetição: for <br>
-Usado para repetir algo um número conhecido de vezes. <br>
-<br>
-Possui três partes: <br>
-<br>
-1° Inicialização <br>
-<br>
-2° Condição <br>
-<br>
-3° Incremento ou decremento <br>
-<br>
-for (inicialização; condição; atualização) { <br>
-    // Código a ser repetido <br>
-} <br>
-Exemplo: <br>
-<br>
-for (int i = 1; i <= 5; i++) { <br>
-    printf("Número: %d\n", i); <br>
-} <br>
-    
+    📌 1. Estrutura de Controle: if, else if, else <br>
+    Usado para decisões condicionais. <br>
+    <br>
+    Executa blocos de código conforme a condição seja verdadeira (true) ou falsa (false). <br>
+    <br>
+    if (condição) { <br>
+        // Código se condição for verdadeira <br>
+    } else if (outra_condição) { <br>
+        // Código se a outra condição for verdadeira <br>
+    } else { <br>
+        // Código se nenhuma condição for verdadeira <br>
+    } <br>
+    <br>
+    Exemplo: <br>
+    <br>
+    int x = 10; <br>
+    <br>
+    if (x > 0) { <br>
+        printf("Positivo"); <br>
+    } else if (x == 0) { <br>
+        printf("Zero"); <br>
+    } else { <br>
+        printf("Negativo"); <br>
+    } <br>
+    <br>
+    <br>
+    📌 2. Estrutura switch/case <br>
+    Usado para comparar uma variável com diferentes valores fixos. <br>
+    <br>
+    Mais legível que muitos if...else if... seguidos. <br>
+    <br>
+    Pode usar break para sair do caso atual (evita cair nos próximos). <br>
+    <br>
+    switch (variável) { <br>
+        case valor1: <br>
+            // Código para valor1 <br>
+            break; <br>
+        case valor2: <br>
+            // Código para valor2 <br>
+            break; <br>
+        default: <br>
+            // Código se nenhum valor for correspondente <br>
+    } <br>
+    <br>
+    Exemplo: <br>
+    <br>
+    int dia = 3; <br>
+    <br>
+    switch (dia) { <br>
+        case 1: <br>
+            printf("Domingo"); <br>
+            break; <br>
+        case 2: <br>
+            printf("Segunda"); <br>
+            break; <br>
+        case 3: <br>
+            printf("Terça"); <br>
+            break; <br>
+        default: <br>
+            printf("Dia inválido"); <br>
+    } <br>
+    <br>
+    <br>
+    📌 3. Estrutura de Repetição: for <br>
+    Usado para repetir algo um número conhecido de vezes. <br>
+    <br>
+    Possui três partes: <br>
+    <br>
+    1° Inicialização <br>
+    <br>
+    2° Condição <br>
+    <br>
+    3° Incremento ou decremento <br>
+    <br>
+    for (inicialização; condição; atualização) { <br>
+        // Código a ser repetido <br>
+    } <br>
+    Exemplo: <br>
+    <br>
+    for (int i = 1; i <= 5; i++) { <br>
+        printf("Número: %d\n", i); <br>
+    } <br>
   </div>
   <button
       onclick="window.location.href='../index.html';"
@@ -115,6 +128,6 @@ for (int i = 1; i <= 5; i++) { <br>
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
       <path d="M16 5l-8 7 8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    </button>
+  </button>
 </body>
 </html>

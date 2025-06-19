@@ -1,0 +1,85 @@
+{
+  "name": "DevNotes",
+  "short_name": "DevNotes",
+  "description": "DevNotes é um hub de aulas para organizar e acessar notas de desenvolvimento web, lógica de programação, mural público e chat em tempo real.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "productivity",
+    "notes",
+    "communication"
+  ],
+  "icons": [
+    {
+      "src": "image/DevNotes.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "image/DevNotes.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "image/screenshot1.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "label": "Página inicial do DevNotes"
+    },
+    {
+      "src": "image/screenshot2.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "label": "Mural público"
+    },
+    {
+      "src": "image/screenshot3.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "label": "Chat em tempo real"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Mural",
+      "short_name": "Mural",
+      "description": "Acesse o mural público",
+      "url": "/pages/mural.html",
+      "icons": [{ "src": "image/mural sem fundo.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Chat",
+      "short_name": "Chat",
+      "description": "Converse em tempo real",
+      "url": "/pages/chat.html",
+      "icons": [{ "src": "image/perfil.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Notas HTML",
+      "short_name": "Notas HTML",
+      "description": "Notas de HTML e CSS",
+      "url": "/pages/notas-web.html",
+      "icons": [{ "src": "image/Untitled_design-removebg-preview.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Notas Lógica C",
+      "short_name": "Notas C",
+      "description": "Notas de Lógica de Programação em C",
+      "url": "/pages/notas-logica-c.html",
+      "icons": [{ "src": "image/images-Photoroom.png", "sizes": "192x192", "type": "image/png" }]
+    }
+  ]
+}
