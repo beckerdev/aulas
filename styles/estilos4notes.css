@@ -62,3 +62,26 @@
       border-radius: 10px;
       margin-bottom: 15px;
     }
+  .subtitulo {
+    font-size: 1.1rem;
+    color: #FFCC00;
+    text-align: center;
+    margin: 0.5rem 0 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  }
+
+  footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+  color: #FFCC00;
+}
+
+a{
+   color: #FFCC00;
+}
