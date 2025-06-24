@@ -70,6 +70,41 @@
       background-color: #1e3c72;
       color: white;
     }
+
     .html{
       font-size: 30px;
     }
+
+    .botão1 {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #1e3c72;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #ccc;
+  font-size: 0.9rem;
+  color: #FFCC00;
+}
+.subtitulo {
+  font-size: 1.1rem;
+  color: #FFCC00;
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+a{
+   color: #FFCC00;
+}
