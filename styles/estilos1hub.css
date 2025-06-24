@@ -8,55 +8,84 @@
     body {
       background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
-      padding: 40px;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    h1 {
+    header {
       text-align: center;
-      font-size: 3rem;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
-    .content {
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .card {
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 15px;
-      padding: 30px;
-      max-width: 900px;
-      margin: 0 auto;
+      padding: 20px;
+      width: 250px;
+      text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s;
     }
 
-    .principal {
-      font-size: 1.4rem;
-      font-weight: bold;
-      margin-top: 30px;
-      margin-bottom: 10px;
-      color: #ffcc00;
+    .card:hover {
+      transform: scale(1.05);
     }
 
-    p {
-      line-height: 1.6;
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
       margin-bottom: 15px;
     }
 
-    hr {
-      border: none;
-      height: 1px;
-      background-color: white;
-      margin: 30px 0;
-      opacity: 0.3;
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #1e3c72;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
     }
-    .subtitulo {
-  font-size: 1.1rem;
-  color: #FFCC00;
-  text-align: center;
-  margin: 0.5rem 0 1.5rem;
-  font-style: italic;
-  opacity: 0.9;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgb(255, 255, 255);
-}
+
+    .card a:hover {
+      background-color: #1e3c72;
+      color: white;
+    }
+
+    .html{
+      font-size: 30px;
+    }
+
+    .botão1 {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #1e3c72;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
 footer {
   text-align: center;
@@ -66,7 +95,16 @@ footer {
   font-size: 0.9rem;
   color: #FFCC00;
 }
-
+.subtitulo {
+  font-size: 1.1rem;
+  color: #FFCC00;
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+  font-style: italic;
+  opacity: 0.9;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
 a{
    color: #FFCC00;
 }
