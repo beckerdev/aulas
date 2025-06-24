@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+  <title>DevNotes</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <title>DevNotes</title>
   <meta name="description" content="Hub de Aulas - DevNotes, um espaço para organizar e acessar notas de desenvolvimento web, lógica de programação e muito mais." />
   <meta name="keywords" content="DevNotes, Hub de Aulas, Desenvolvimento Web, Lógica de Programação, HTML, CSS, Notas, Mural, Chat" />
   <meta name="author" content="DevNotes Team" />
@@ -24,8 +25,8 @@
 </head>
 <body>
   <header>
-    <h1>Bem-vindo ao Hub de Aulas</h1>
-    <p>Escolha uma área para tomar nota</p>
+    <h1>Bem-vindo ao Hub de Matérias da DevNotes</h1>
+    <p class="subtitulo">Escolha uma das Opções para Realizar a Tarefa Desejada</p>
   </header>
 
   <div class="container">
@@ -72,11 +73,22 @@
       z-index: 1000;
       transition: background 0.2s;
     "
-    onmouseover="this.style.background='#f0f0f0';"
-    onmouseout="this.style.background='#fff';"
+    onmouseover="this.style.background-color='#1E3C72';"
+    onmouseover="this.style.color='#FEFEFE';"
+
+    onmouseout="this.style.background-color='#FEFEFE';"
+    onmouseout="this.style.color='#1E3C72';"
     aria-label="Sobre nós"
+    class="botão1"
   >
     About us
   </button>
+
+    <footer>
+    <p>&copy; 2025 DevNotes. Todos os direitos reservados.</p>
+    <p>Edição Especial Por: beckerdev e FDapperDev.
+    <A href=" https://www.instagram.com/0o_becker?igsh=MW5xM2o0NnNoazdtbQ=="> @0o_becker</A>,<A href=" https://www.instagram.com/gabrielfdapper?igsh=azFjb203eGprNzE4"> @gabrielfdapper </A>,<A href=" https://www.instagram.com/institutoivoti?igsh=MTd3OHBtc2hrN2lkNw=="> @institutoivoti</A></p>
+    </footer>
+
 </body>
 </html>
