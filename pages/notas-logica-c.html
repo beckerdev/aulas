@@ -23,6 +23,28 @@
   <link rel="stylesheet" href="../styles/estilos3c.css" />
 </head>
 <body>
+    <!-- Botão de voltar para a página inicial -->
+  <button
+    onclick="window.location.href='../index.html';"
+    style="
+      position: static;
+      top: 16px;
+      left: 16px;
+      background: white;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    "
+    aria-label="Voltar para a página inicial"
+  >
+    <!-- Seta para a esquerda -->
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M16 5l-8 7 8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <h1>NOTAS C</h1>
     <p class="subtitulo">Lógica e Desenvolvimento de Softwares IFTI - TI1</p>
     <br>
@@ -108,31 +130,11 @@
         printf("Número: %d\n", i); <br>
     } <br>
   </div>
-  <button
-      onclick="window.location.href='../index.html';"
-      style="
-        position: fixed;
-        top: 16px;
-        left: 16px;
-        background: white;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        z-index: 1000;
-      "
-      aria-label="Voltar para a página inicial"
-    >
-    <!-- Seta para a esquerda -->
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M16 5l-8 7 8 7" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </button>
+
   <button
     onclick="window.location.href='programas-c.html';"
     style="
-    position: fixed;
+    position: static;
   bottom: 24px;
   right: 24px;
   background: #fff;
@@ -140,6 +142,7 @@
   border: none;
   border-radius: 24px;
   padding: 12px 24px;
+  margin-top: 25px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   font-size: 1rem;
   cursor: pointer;
