@@ -12,6 +12,12 @@
   <link rel="icon" href="./image/DevNotes.png" type="image/png" />
   <link rel="manifest" href="scripts/manifest.json" />
   <link rel="stylesheet" href="styles/estilos1hub.css" />
+  <script src="scripts/user-tracking.js"></script>
+</head>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="scripts/contato-firebase.js"></script>
 </head>
 <body>
   <header>
@@ -42,6 +48,16 @@
       <img src="https://images.vexels.com/media/users/3/139957/isolated/preview/8a87599b006bf48d87643a7499710d31-bate-papo-na-nuvem.png" alt="Chat">
       <h2>Chat e Conversas</h2>
       <a href="pages/chat.html" class="acessar">Acessar</a>
+    </div>
+
+    <div class="card">
+      <img src="image/156883897-about-us-icon-or-sign.jpg" alt="Contato">
+      <h2>Contato</h2>
+      <form class="contato-form" style="display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%;">
+        <input type="email" name="email" placeholder="Seu e-mail" required style="width: 90%; padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em;">
+        <input type="tel" name="telefone" placeholder="Seu telefone" pattern="[0-9]{10,11}" required style="width: 90%; padding: 8px; border-radius: 6px; border: 1px solid #ccc; font-size: 1em;">
+        <button type="submit" class="acessar" style="width: 60%; margin-top: 6px;">Enviar</button>
+      </form>
     </div>
   </div>
 
